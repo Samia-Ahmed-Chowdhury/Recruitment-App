@@ -1,0 +1,41 @@
+
+.dance{
+    animation: img_move 9s infinite linear;
+}
+
+@keyframes img_move {
+    0% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+.girl{
+    animation: girl_move 5s infinite linear;
+}
+
+@keyframes girl_move {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+.boy{
+    animation: boy_move 5s infinite linear;
+}
+
+@keyframes boy_move {
+    0% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

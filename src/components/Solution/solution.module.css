@@ -1,0 +1,29 @@
+.paper{
+    animation: img_move 7s infinite linear;
+}
+@keyframes img_move {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translate(10px,-30px);
+    }
+    100% {
+        transform: translate(0,0px);
+    }
+}
+.satFoot{
+    animation: footMove 7s infinite linear;
+}
+@keyframes footMove {
+    0% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(6px);
+    }
+    100% {
+        transform: translateX(-2px);
+    }
+    
+}
