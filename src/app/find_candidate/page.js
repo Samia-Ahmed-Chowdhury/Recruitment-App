@@ -11,7 +11,7 @@ function Page() {
     const [listData, setListData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/candidate')
+        fetch('https://recruitment-app-samia-ahmed-chowdhury.vercel.app/api/candidate')
             .then(res => res.json())
             .then(data => {
                 setListData(data)
