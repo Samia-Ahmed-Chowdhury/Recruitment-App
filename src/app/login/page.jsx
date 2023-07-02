@@ -8,7 +8,7 @@ import SocialSystem from '@/components/SocialSystem/SocialSystem';
 import Swal from 'sweetalert2';
 import { AuthContext } from '@/provider/AuthProvider';
 
-function page() {
+function Page() {
 
     const { setUserName, setUserEmail, setPhotoUrl, googleHandler, githubHandler, logInUser, updateUserProfile, updateUserPassWord } = useContext(AuthContext)
 
@@ -92,4 +92,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
