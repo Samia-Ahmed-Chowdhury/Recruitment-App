@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 // import route from '@/'
 
-function page() {
+function Page() {
 
     const [itemData, setItemData] = useState([])
     const [listData, setListData] = useState([])
@@ -52,4 +52,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
