@@ -1,4 +1,6 @@
+import Contact from "@/components/Contact/Contact";
 import CountDown from "@/components/CountDown/CountDown";
+import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/HeroSection/Hero";
 import Service from "@/components/Service/Service";
 import Solution from "@/components/Solution/Solution";
@@ -14,6 +16,8 @@ export default function Home() {
   <Service/>
   <Solution/>
   <Testimonial/>
+  <Contact/>
+  <Footer/>
   </>
   )
 }

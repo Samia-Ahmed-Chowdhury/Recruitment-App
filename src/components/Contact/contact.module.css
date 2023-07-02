@@ -1,0 +1,17 @@
+.img{
+    animation: img_move 7s infinite linear;
+}
+@keyframes img_move {
+    0% {
+        transform: translateX(0px);
+    }
+    45% {
+        transform: translateX(-150px);
+    }
+    70% {
+        transform: rotateY(180deg) ;
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
