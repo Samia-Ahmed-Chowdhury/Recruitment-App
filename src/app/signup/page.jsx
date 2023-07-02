@@ -1,13 +1,17 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
 import Image from 'next/image';
 import SocialSystem from '@/components/SocialSystem/SocialSystem';
+import { AuthContext } from '@/provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 function page() {
-
+    
+    const { setUserName, setUserEmail,setPhotoUrl, registerWithEmail, updateUserProfile } = useContext(AuthContext)
+    
     const [showPass, setShowPass] = useState(false)
     const [error, setError] = useState('')
     const [passwordError, setPasswordError] = useState('')
@@ -45,24 +49,56 @@ function page() {
     }
 
 
-    const onSubmit = data => {
-        const email = data.email
-        const password = data.password
-        console.log(email, password)
-
-    }
+        const submitHandler = (e) => {
+            e.preventDefault()
+            const name = e.target.name.value;
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+            const photo_url = e.target.photo_url.value;
+    
+            if (passwordError) {
+                e.target.password.focus();
+                e.target.password.style.border = '2px solid red'
+                return;
+            }
+            e.target.password.style.border = '1px solid #ced4da'
+    
+            registerWithEmail(email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    updateUserProfile(name, photo_url)
+                        .then(() => {
+                            setUserName(user.displayName);
+                            setUserEmail(user.email)
+                            setPhotoUrl(user.photoURL)
+                            Swal.fire(
+                                'Signup Successfully (^_^)',
+                                'But This project is under construction !!.. ',
+                                'success'
+                              )
+                        }).catch((error) => {
+                            const errorMessage = error.message;
+                            console.log(errorMessage)
+                        });
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+                    console.log(errorMessage)
+                });
+        }
 
     return (
         <div className='grid md:grid-cols-[.9fr,1fr] gap-10 my-16 lg:mx-16 mx-5'>
             <div>
-                <p className='text-lg font-bold text-center text-primaryColor'>Login With Signup : </p>
-                <SocialSystem />
+            <p className='text-lg font-bold text-center text-primaryColor'>Signup With Social : </p>
+               <SocialSystem />
                 <div className='w-full '>
                     <Image src="/login.svg" alt='logo' width={400} height={400} className='mx-auto' priority />
                 </div>
             </div>
             <div className='text-center'>
-                <form onSubmit={handleSubmit(onSubmit)} className='md:w-3/4 px-10 mb-6 mt-2 shadow-xl pt-16 py-12  mx-auto rounded-lg'>
+                <form onSubmit={submitHandler} className='md:w-3/4 px-10 mb-6 mt-2 shadow-xl pt-16 py-12  mx-auto rounded-lg'>
                     <h2 className='text-3xl font-semibold'>Please Signup </h2>
                     <div className="form-control">
                         <label className="label">
@@ -102,6 +138,7 @@ function page() {
                     <div className="form-control  my-5">
                         <button className="btn btn-primary" type="submit">Submit</button>
                     </div>
+                    <p className='text-lg font-medium my-5'>Already have An Account ? <Link className='font-medium text-[#9774FF]' href='/login'>Login</Link></p>
                 </form>
             </div>
         </div>

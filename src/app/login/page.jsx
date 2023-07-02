@@ -1,12 +1,16 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
 import Image from 'next/image';
 import SocialSystem from '@/components/SocialSystem/SocialSystem';
+import Swal from 'sweetalert2';
+import { AuthContext } from '@/provider/AuthProvider';
 
 function page() {
+
+    const { setUserName, setUserEmail, setPhotoUrl, googleHandler, githubHandler, logInUser, updateUserProfile, updateUserPassWord } = useContext(AuthContext)
 
     const [showPass, setShowPass] = useState(false)
     const [error, setError] = useState('')
@@ -16,7 +20,30 @@ function page() {
     const onSubmit = data => {
         const email = data.email
         const password = data.password
-        console.log(email, password)
+        logInUser(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+
+                updateUserProfile(user.displayName)
+                    .then(() => {
+                        setUserName(user.displayName);
+                        setUserEmail(user.email)
+                        setPhotoUrl(user.photoURL)
+                        Swal.fire(
+                            'Login successful (^_^)',
+                            'But This project is under construction !!.. ',
+                            'success'
+                          )
+                    }).catch((error) => {
+                        const errorMessage = error.message;
+                        setError(errorMessage)
+                    });
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
 
     }
     return (

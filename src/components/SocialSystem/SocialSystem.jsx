@@ -1,42 +1,52 @@
 'use client'
-import React from 'react'
+import { AuthContext } from '@/provider/AuthProvider';
+import React, { useContext } from 'react'
 import { FaGoogle, FaGithub, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 function SocialSystem() {
-    // const { setUserName, setUserEmail, setPhotoUrl, googleHandler } = useContext(AuthContext)
-     const googleBtnClicked = () => {
-    //     googleHandler()
-    //       .then((result) => {
-    //         // The signed-in user info.
-    //         const user = result.user.displayName;
-    //         setPhotoUrl(result.user?.photoURL)
-    //         setUserEmail(result.user?.email)
-    //         setUserName(user)
-    //         navigate(from);
+    const { setUserName, setUserEmail, setPhotoUrl, googleHandler, githubHandler, logInUser, updateUserProfile, updateUserPassWord } = useContext(AuthContext)
+
+    const googleBtnClicked = () => {
+        googleHandler()
+          .then((result) => {
+            // The signed-in user info.
+            const user = result.user.displayName;
+            setPhotoUrl(result.user?.photoURL)
+            setUserEmail(result.user?.email)
+            setUserName(user)
+            Swal.fire(
+                'Login successful (^_^)',
+                'But This project is under construction !!.. ',
+                'success'
+              )
     
-    //       }).catch((error) => {
-    //         // Handle Errors here.
-    //         const errorMessage = error.message;
-    //         console.log(errorMessage)
-    //       });
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorMessage = error.message;
+            console.log(errorMessage)
+          });
      }
     
      const githubBtnClicked = () => {
-    //     githubHandler()
-    //     .then((result) => {
-    //         // The signed-in user info.
-    //         const user = result.user.displayName;
-    //         setPhotoUrl(result.user?.photoURL)
-    //         setUserEmail(result.user?.email)
-    //         setUserName(user)
-    //         navigate(from);
+        githubHandler()
+        .then((result) => {
+            // The signed-in user info.
+            const user = result.user.displayName;
+            setPhotoUrl(result.user?.photoURL)
+            setUserEmail(result.user?.email)
+            setUserName(user)
+            Swal.fire(
+                'Login successful (^_^)',
+                'But This project is under construction !!.. ',
+                'success'
+              )
     
-    //       }).catch((error) => {
-    //         // Handle Errors here.
-    //         const errorMessage = error.message;
-    //         console.log(errorMessage)
-    //       });
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorMessage = error.message;
+            console.log(errorMessage)
+          });
      }
     return (
         <>
