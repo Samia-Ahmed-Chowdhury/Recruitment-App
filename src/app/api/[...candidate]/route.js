@@ -1,0 +1,75 @@
+export async function GET(){
+    const data=[
+        {
+            "id":1,
+          "image":"https://images.unsplash.com/photo-1584339312444-6952d098e152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybCUyMGhpamFifGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+          "name": "John Doe",
+          "location": "USA",
+          "role": "Frontend Developer"
+        },
+        {
+            "id":2,
+          "image": "https://images.unsplash.com/photo-1459356979461-dae1b8dcb702?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+          "name": "Jane Smith",
+          "location": "UK",
+          "role": "Software Developer"
+        },
+        {
+            "id":3,
+          "image":"https://images.unsplash.com/photo-1460056560479-46cf73637e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "David Johnson",
+          "location": "Canada",
+          "role": "React Developer"
+        },
+        {
+            "id":4,
+          "image":  "https://images.unsplash.com/photo-1530797195762-6e542a0f1843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2lybCUyMGhpamFifGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+          "name": "Sarah Williams",
+          "location": "Bangladesh",
+          "role": "Next.js Developer"
+        },
+        {
+            "id":5,
+          "image":"https://images.unsplash.com/photo-1508852951744-beab078a4b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "Michael Brown",
+          "location": "India",
+          "role": "Frontend Developer"
+        },
+        {
+            "id":6,
+          "image":  "https://images.unsplash.com/photo-1536463726684-434ca0eeea33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGdpcmwlMjBoaWphYnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "Emily Davis",
+          "location": "USA",
+          "role": "Software Developer"
+        },
+        {
+            "id":7,
+          "image":  "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "Daniel Wilson",
+          "location": "UK",
+          "role": "React Developer"
+        },
+        {
+            "id":8,
+          "image":"https://images.unsplash.com/photo-1460056560479-46cf73637e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "Olivia Taylor",
+          "location": "Canada",
+          "role": "Next.js Developer"
+        },
+        {
+            "id":9,
+          "image":  "https://images.unsplash.com/photo-1536463726684-434ca0eeea33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGdpcmwlMjBoaWphYnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+          "name": "James Anderson",
+          "location": "Bangladesh",
+          "role": "Frontend Developer"
+        },
+        {
+            "id":10,
+          "image":"https://images.unsplash.com/photo-1584339312444-6952d098e152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybCUyMGhpamFifGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+          "name": "Sophia Martinez",
+          "location": "India",
+          "role": "Software Developer"
+        }
+      ]
+  return new Response(JSON.stringify(data))    
+}
