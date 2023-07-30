@@ -13,10 +13,10 @@ export default function Home() {
     <Hero/>
   <CountDown/>
   <Story/>
-  <Service/>
-  <Solution/>
-  <Testimonial/>
-  <Contact/>
+   <Service/>
+<Solution/>
+   <Testimonial/>
+   <Contact/>
   <Footer/>
   </>
   )

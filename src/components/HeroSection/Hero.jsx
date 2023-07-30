@@ -5,9 +5,9 @@ import style from './hero.module.css'
 function Hero() {
     return (
         <div className='bg-bgColor'>
-            <div className='grid lg:grid-cols-2 gap-2 items-center pt-8 mx-5 lg:mx-auto max-w-7xl'>
+            <div className='grid lg:grid-cols-2 gap-2 items-center pt-8 px-5 lg:mx-auto max-w-7xl'>
                 <div className='flex flex-col justify-center w-10/12 mx-auto'>
-                    <h1 className='font-bold text-5xl md:text-7xl md:leading-[84px] text-black'>One Step Closer To Your
+                    <h1 className='font-bold text-5xl leading-[57px] md:text-7xl md:leading-[84px] text-black'>One Step Closer To Your
                         <span className='text_decoration'> Dreamt Job</span></h1>
                     <p className='font-normal text-[16px] md:text-lg text-paragraph_color my-4'>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
                     <div className=''>
