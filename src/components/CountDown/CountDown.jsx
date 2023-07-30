@@ -8,7 +8,7 @@ import style from './CountDown.module.css'
 function CountDown() {
     return (
         <div className='py-4 mt-28 mb-10 md:my-0'>
-            <div className='grid  lg:grid-cols-4 gap-8 pt-10 pb-4 justify-center mx-5 lg:mx-16'>
+            <div className='grid lg:grid-cols-4 gap-8 pt-6 pb-4 justify-center mx-5 lg:mx-auto max-w-7xl'>
                 {
                     cardData.map((ele) =>
                         <div key={ele.id} className={`card w-56 text-center ${style.box}`}>

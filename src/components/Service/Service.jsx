@@ -4,7 +4,7 @@ import style from './service.module.css'
 
 function Service() {
     return (
-        <div className='flex flex-col lg:flex-row gap-5 lg:px-12 px-5 my-24 lg:my-40'>
+        <div className='flex flex-col lg:flex-row gap-5 mx-5 lg:mx-auto max-w-7xl my-24 lg:my-40'>
             <div className={`${style.downCard} mb-8 lg:mb-0 lg:w-[60%] text-center text-[30px] font-semibold`}>
                 <h3 className='lg:w-[90%] mx-auto my-auto text-black'>Provide Best Service With Our Tools</h3>
                 <button className="my_button mt-5 ">Discover More</button>

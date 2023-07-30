@@ -3,7 +3,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className="footer p-10 mt-12 bg-bgColor text-white">
+    <footer className="footer p-10 mt-12 bg-bgColor text-white mx-5 lg:mx-auto max-w-7xl">
       
     <div>
     <Image src="/logo.png" alt='logo' width={150} height={50} priority />
